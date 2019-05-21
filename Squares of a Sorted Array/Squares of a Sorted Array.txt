@@ -1,0 +1,25 @@
+class Solution {
+    public int[] sortedSquares(int[] a) 
+    {
+        int n=a.length-1;
+		int[] result = new int[n+1];
+		int left=0;
+		int right=n;
+		
+		while(left <=right)
+		{
+			if(Math.abs(a[left])>Math.abs(a[right]))
+			{
+				result[n--]=a[left]*a[left];
+				left++;
+			}
+			else
+			{
+				result[n--]=a[right]*a[right];
+				right--;
+			}
+		}
+        return result;
+        
+    }
+}
