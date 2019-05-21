@@ -1,0 +1,23 @@
+class Solution {
+    public int numUniqueEmails(String[] emails) {
+        HashMap<String,Integer> map=new HashMap(); 
+		 for(int m=0;m<emails.length;m++)
+		 {	 
+		    String a = emails[m];
+		    String[] a_arr=a.split("@"); 
+			a = a_arr[0].replace(".","");
+			String[] a_plus=a.split("\\+");
+			a=a_plus[0];
+			a=a+a_arr[1];	
+			if(map.containsKey(a))
+			{
+				map.put(a, map.get(a)+1);
+			}
+			else
+			{
+				map.put(a,1);
+			}	
+		 }
+		 return map.size();
+    }
+}
