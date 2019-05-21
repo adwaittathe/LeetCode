@@ -1,0 +1,31 @@
+class Solution {
+    public int uniqueMorseRepresentations(String[] words) {
+        char[] alphabet=new char[26];
+		for (char c = 'a'; c <= 'z'; c++) {
+			alphabet[c - 'a'] = c;
+		}
+		String[] code = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+		HashMap<Character,String>map=new HashMap();
+		for(int i=0;i<26;i++)
+		{
+			map.put(alphabet[i], code[i]);
+		}
+		
+		HashSet<String> res_set=new HashSet<>();
+		
+		for(int m=0;m<words.length;m++)
+		{
+			StringBuilder bld=new StringBuilder();
+			String s=words[m];
+		    char[] a=s.toCharArray();
+		    for(char p:a)
+		    {
+		    	bld.append(map.get(p));
+		    }
+		    s=bld.toString();
+		    res_set.add(s);	    
+		}
+		
+		return res_set.size();
+    }
+}
