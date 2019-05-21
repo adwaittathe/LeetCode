@@ -1,0 +1,24 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] A) {
+        int[] res= new int[A.length];
+		int k=0,m=1;
+		for(int i=0;i<A.length;i++)
+		{
+			if(A[i]%2==0)
+			{
+				res[k]=A[i];
+				k+=2;
+			}
+			else
+			{
+				res[m]=A[i];
+				m+=2;
+			}
+			
+		}
+		
+		
+		return res;
+        
+    }
+}
