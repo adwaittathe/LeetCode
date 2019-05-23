@@ -1,0 +1,21 @@
+class Solution 
+{
+ public int findComplement(int a) 
+ {
+		String s="";
+		while(a>0)
+		{
+			if(a%2==1)
+			{
+			s+=""+0;
+			}
+			else
+			{
+			s+=""+1;	
+			}
+			a=a/2;
+		}
+		s=new StringBuffer(s).reverse().toString();
+		return Integer.parseInt(s,2);
+ }
+}
